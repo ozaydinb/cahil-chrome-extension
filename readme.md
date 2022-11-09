@@ -1,4 +1,4 @@
-#### cahil kalmak için google arama sonuçlarınızdan haber sitelerini kaldıran bir chrom eklentisi.
+#### cahil kalmak için google arama sonuçlarınızdan haber sitelerini kaldıran bir chrome eklentisi.
 
 ## Cahilim, nasıl yükleyeceğimi bilmiyorum;
 
