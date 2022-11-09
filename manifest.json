@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "cahilleştirici",
+  "version": "1.0",
+  "description": "cahilleşmek için arama sonucundan haber sitelerini kaldırır.",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://google.com/*",
+        "https://www.google.com/*"
+      ]
+    }
+  ]
+}
