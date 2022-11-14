@@ -1,17 +1,34 @@
 const searchResultDiv = document.getElementById("result-stats")
 if(searchResultDiv !== undefined) {
-    let advancedSearchButton = document.createElement("button");
-    advancedSearchButton.innerHTML = "Cahilleş";
-    advancedSearchButton.onclick = search;
+    let removeNewsButton = document.createElement("button");
+    removeNewsButton.innerHTML = "Cahilleş 🥳";
+    removeNewsButton.onclick = removeNewsButtonOnClick;
+    removeNewsButton.style = "margin-left:10px"
 
-    searchResultDiv.appendChild(advancedSearchButton);
+    let removeEcommerceButton = document.createElement("button");
+    removeEcommerceButton.innerHTML = "fakirim :(";
+    removeEcommerceButton.onclick = removeEcommerceButtonOnClick;
+    removeEcommerceButton.style = "margin-left:10px"
+
+    searchResultDiv.appendChild(removeNewsButton);
+    searchResultDiv.appendChild(removeEcommerceButton);
 }
 
-function search() {
-    const searchInput = document.getElementsByName("q") && document.getElementsByName("q")[0];
-    const searchText = searchInput.value;
+function removeEcommerceButtonOnClick() {
+    const ecommercePageUrls = ["hepsiburada.com",
+        "trendyol.com",
+        "n11.com",
+        "akakce.com",
+        "cimri.com",
+        "ciceksepeti.com",
+        "amazon.com.tr",
+        "getir.com",
+        "boyner.com.tr"]
+    filterSearchResult(ecommercePageUrls);
+}
 
-    const excludedWebSites = ["hurriyet.com.tr",
+function removeNewsButtonOnClick() {
+    const newsWebPageUrls = ["hurriyet.com.tr",
         "sabah.com.tr",
         "milliyet.com.tr",
         "ensonhaberler.com",
@@ -32,6 +49,13 @@ function search() {
         "mynet.com",
         "aksam.com.tr",
         "internethaber.com"];
+
+    filterSearchResult(newsWebPageUrls);
+}
+
+function filterSearchResult(excludedWebSites) {
+    const searchInput = document.getElementsByName("q") && document.getElementsByName("q")[0];
+    const searchText = searchInput.value;
 
     let removedSearchTerms = "";
     for (let i = 0; i < excludedWebSites.length; i++) {
